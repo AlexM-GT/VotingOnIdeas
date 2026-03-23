@@ -1,4 +1,5 @@
 using Microsoft.Extensions.DependencyInjection;
+using Scalar.AspNetCore;
 using Serilog;
 using VotingOnIdeas.API.Middleware;
 using VotingOnIdeas.Application;
@@ -42,7 +43,10 @@ try
     app.UseMiddleware<ExceptionHandlingMiddleware>();
 
     if (app.Environment.IsDevelopment())
+    {
         app.MapOpenApi();
+        app.MapScalarApiReference();
+    }
 
     app.UseHttpsRedirection();
     app.UseCors();
