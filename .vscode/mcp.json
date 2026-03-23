@@ -17,11 +17,11 @@
       ]
     },
     "figma": {
-      "type": "stdio",
       "command": "npx",
       "args": [
         "-y",
         "figma-developer-mcp",
+        "--stdio",
         "--figma-api-key=${input:figmaApiKey}"
       ]
     }
