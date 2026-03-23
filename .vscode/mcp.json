@@ -1,0 +1,29 @@
+{
+  "inputs": [
+    {
+      "id": "figmaApiKey",
+      "type": "promptString",
+      "description": "Figma API key",
+      "password": true
+    }
+  ],
+  "servers": {
+    "playwright": {
+      "type": "stdio",
+      "command": "npx",
+      "args": [
+        "-y",
+        "@playwright/mcp@latest"
+      ]
+    },
+    "figma": {
+      "type": "stdio",
+      "command": "npx",
+      "args": [
+        "-y",
+        "figma-developer-mcp",
+        "--figma-api-key=${input:figmaApiKey}"
+      ]
+    }
+  }
+}
