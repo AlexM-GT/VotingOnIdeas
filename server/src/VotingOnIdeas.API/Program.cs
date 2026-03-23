@@ -8,7 +8,7 @@ using VotingOnIdeas.Infrastructure.Persistence;
 
 Log.Logger = new LoggerConfiguration()
     .WriteTo.Console()
-    .CreateBootstrapLogger();
+    .CreateLogger();
 
 try
 {
@@ -63,8 +63,11 @@ try
 catch (Exception ex) when (ex is not HostAbortedException)
 {
     Log.Fatal(ex, "Application terminated unexpectedly");
+    throw;
 }
 finally
 {
     Log.CloseAndFlush();
 }
+
+public partial class Program { }

@@ -10,7 +10,10 @@ public static class DatabaseSeeder
 {
     public static async Task SeedAsync(AppDbContext context, IPasswordHasher passwordHasher)
     {
-        await context.Database.MigrateAsync();
+        if (context.Database.IsRelational())
+            await context.Database.MigrateAsync();
+        else
+            await context.Database.EnsureCreatedAsync();
 
         if (!await context.Users.AnyAsync(u => u.Username == "admin"))
         {
