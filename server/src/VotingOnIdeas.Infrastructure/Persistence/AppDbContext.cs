@@ -10,6 +10,7 @@ public sealed class AppDbContext : DbContext
     public DbSet<User> Users => Set<User>();
     public DbSet<Idea> Ideas => Set<Idea>();
     public DbSet<Vote> Votes => Set<Vote>();
+    public DbSet<RefreshToken> RefreshTokens => Set<RefreshToken>();
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

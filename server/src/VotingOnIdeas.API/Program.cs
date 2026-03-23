@@ -1,7 +1,10 @@
+using Microsoft.Extensions.DependencyInjection;
 using Serilog;
 using VotingOnIdeas.API.Middleware;
 using VotingOnIdeas.Application;
+using VotingOnIdeas.Application.Interfaces;
 using VotingOnIdeas.Infrastructure;
+using VotingOnIdeas.Infrastructure.Persistence;
 
 Log.Logger = new LoggerConfiguration()
     .WriteTo.Console()
@@ -47,6 +50,13 @@ try
     app.UseAuthorization();
 
     app.MapControllers();
+
+    using (var scope = app.Services.CreateScope())
+    {
+        var db = scope.ServiceProvider.GetRequiredService<AppDbContext>();
+        var hasher = scope.ServiceProvider.GetRequiredService<IPasswordHasher>();
+        await DatabaseSeeder.SeedAsync(db, hasher);
+    }
 
     app.Run();
 }

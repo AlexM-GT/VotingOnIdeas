@@ -4,9 +4,11 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
+using VotingOnIdeas.Application.Interfaces;
 using VotingOnIdeas.Domain.Interfaces;
 using VotingOnIdeas.Infrastructure.Persistence;
 using VotingOnIdeas.Infrastructure.Repositories;
+using VotingOnIdeas.Infrastructure.Services;
 
 namespace VotingOnIdeas.Infrastructure;
 
@@ -23,6 +25,8 @@ public static class DependencyInjection
         services.AddScoped<IUserRepository, UserRepository>();
         services.AddScoped<IIdeaRepository, IdeaRepository>();
         services.AddScoped<IVoteRepository, VoteRepository>();
+        services.AddScoped<IRefreshTokenRepository, RefreshTokenRepository>();
+        services.AddScoped<IPasswordHasher, BcryptPasswordHasher>();
 
         services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
             .AddJwtBearer(options =>
