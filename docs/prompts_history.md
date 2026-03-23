@@ -109,3 +109,21 @@ EntityFramework is used to access data in the database.
 - Agent: GitHub Copilot
 - Model: GPT-5.4
 - Agent Response: "Implemented. Wrote the saved application development plan into `docs/plan.md` and kept the prompt history updated."
+
+### Entry 7
+- User Prompt: "Execute Step 1 of the plan"
+- Agent: GitHub Copilot
+- Model: Claude Sonnet 4.6
+- Agent Response: "Implemented. Scaffolded the full Step 1 foundation: (1) Backend — created `server/VotingOnIdeas.sln`, four source projects (Domain, Application, Infrastructure, API) in `server/src/`, three xUnit test projects in `server/tests/`, added all to the solution, wired clean-architecture project references (Application→Domain, Infrastructure→Domain+Application, API→Application+Infrastructure, plus test-to-source references). All 7 projects build cleanly. (2) Frontend — created `package.json` (React 19, TypeScript, Vite, Tailwind CSS, React Router, Playwright), `tsconfig.json`/`tsconfig.app.json`/`tsconfig.node.json` in strict mode, `tailwind.config.js`, `postcss.config.js`, `playwright.config.ts` targeting port 3000 with desktop and mobile Chromium projects, `.env.local` with `VITE_API_BASE_URL`, `index.html`, `src/main.tsx`, `src/App.tsx`, and `src/index.css` with Tailwind directives. Ran `npm install` — 0 vulnerabilities."
+
+### Entry 8
+- User Prompt: "Create .gitignore file based on the app React+API structure."
+- Agent: GitHub Copilot
+- Model: Claude Sonnet 4.6
+- Agent Response: "Implemented. Created `.gitignore` at the repo root covering: .NET/ASP.NET Core (bin, obj, .vs, NuGet, build artifacts, test results, secrets/appsettings.Local.json), React/Vite/Node (node_modules, dist, .env*.local, Playwright report folders, tsbuildinfo), and general OS/editor files (macOS, Windows, JetBrains, VS Code — preserving mcp.json and other useful .vscode files)."
+
+### Entry 9
+- User Prompt: "Execute Step 2 of the plan"
+- Agent: GitHub Copilot
+- Model: Claude Sonnet 4.6
+- Agent Response: "Implemented. Step 2 backend architecture setup is complete — all 7 projects build cleanly. (1) NuGet packages: Application ← FluentValidation + DI extensions; Infrastructure ← EF Core SQL Server + Tools + Design + JWT Bearer + BCrypt.Net-Next; API ← Serilog.AspNetCore + Serilog.Sinks.Console; all test projects ← FluentAssertions; API.Tests ← Microsoft.AspNetCore.Mvc.Testing. (2) Boilerplate removed: WeatherForecast.cs, WeatherForecastController.cs, all Class1.cs files, .http file. (3) Domain layer: Entity<TId> base class, IRepository<TEntity,TId> interface, IUnitOfWork interface, DomainException. (4) Application layer: Result<T>/Result result pattern, PagedResult<T> record, application exceptions (NotFoundException, UnauthorizedException, ConflictException, ValidationException), DependencyInjection.cs registering FluentValidation validators. (5) Infrastructure layer: AppDbContext with ApplyConfigurationsFromAssembly, UnitOfWork, DependencyInjection.cs wiring EF Core SQL Server + JWT Bearer + IUnitOfWork. (6) API layer: ExceptionHandlingMiddleware mapping all exception types to RFC 9110 ProblemDetails; Program.cs with Serilog, AddApplication(), AddInfrastructure(), CORS, authentication, authorization, OpenAPI; appsettings.json with Serilog/JWT/CORS/ConnectionStrings structure; appsettings.Development.json with local dev defaults."

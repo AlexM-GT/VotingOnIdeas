@@ -1,0 +1,131 @@
+# ============================================================
+# .NET / ASP.NET Core (server/)
+# ============================================================
+bin/
+obj/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+.vs/
+*.swp
+*_i.c
+*_p.c
+*.ncb
+*.opensdf
+*.sdf
+*.cachefile
+*.aps
+
+# NuGet
+*.nupkg
+*.snupkg
+**/[Pp]ackages/
+!**/[Pp]ackages/build/
+*.nuget.props
+*.nuget.targets
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# Build results
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+[Ww][Ii][Nn]32/
+[Aa][Rr][Mm]/
+[Aa][Rr][Mm]64/
+bld/
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Ll]ogs/
+
+# ASP.NET Scaffolding
+ScaffoldingReadMe.txt
+
+# dotnet publish output
+publish/
+PublishProfiles/
+
+# Entity Framework migrations user data (keep Migrations folder, ignore snapshots if needed)
+# Uncomment the next line if you want to skip auto-generated EF snapshot
+# **/Migrations/*.Designer.cs
+
+# Test results
+TestResults/
+*.trx
+*.coverage
+*.coveragexml
+[Tt]est[Rr]esult*/
+coverage*/
+
+# Secrets / environment
+appsettings.Development.json
+appsettings.Local.json
+*.pfx
+*.p12
+secrets.json
+**/secrets.json
+
+# ============================================================
+# Node.js / React / Vite (client/)
+# ============================================================
+node_modules/
+dist/
+dist-ssr/
+*.local
+.cache/
+.parcel-cache/
+
+# Vite
+vite.config.*.timestamp-*
+
+# TypeScript incremental build
+*.tsbuildinfo
+
+# Environment files
+.env
+.env.local
+.env.*.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Playwright
+/client/test-results/
+/client/playwright-report/
+/client/blob-report/
+/client/.playwright/
+
+# ============================================================
+# General / OS / Editor
+# ============================================================
+.DS_Store
+Thumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# JetBrains IDEs
+.idea/
+*.iml
+*.iws
+
+# Visual Studio Code
+.vscode/*
+!.vscode/mcp.json
+!.vscode/extensions.json
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Docker
+docker-compose.override.yml

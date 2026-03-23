@@ -1,0 +1,13 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/VotingOnIdeas.API/VotingOnIdeas.API.csproj" />
+    <Project Path="src/VotingOnIdeas.Application/VotingOnIdeas.Application.csproj" />
+    <Project Path="src/VotingOnIdeas.Domain/VotingOnIdeas.Domain.csproj" />
+    <Project Path="src/VotingOnIdeas.Infrastructure/VotingOnIdeas.Infrastructure.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/VotingOnIdeas.API.Tests/VotingOnIdeas.API.Tests.csproj" />
+    <Project Path="tests/VotingOnIdeas.Application.Tests/VotingOnIdeas.Application.Tests.csproj" />
+    <Project Path="tests/VotingOnIdeas.Infrastructure.Tests/VotingOnIdeas.Infrastructure.Tests.csproj" />
+  </Folder>
+</Solution>
