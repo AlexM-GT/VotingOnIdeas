@@ -133,3 +133,9 @@ EntityFramework is used to access data in the database.
 - Agent: GitHub Copilot
 - Model: Claude Sonnet 4.6
 - Agent Response: "Implemented. Updated plan step 3 with the concrete DB schema: Users (Id, Username, Email, PasswordHash, Salt, CreatedAt; roles: user/admin), Ideas (Id, Title, Description, UserId, CreatedAt), Votes (Id, IdeaId, UserId, Value 1–5, CreatedAt). Added relationship details, unique (UserId, IdeaId) vote constraint, and admin role bypass rule."
+
+### Entry 11
+- User Prompt: "Execute Step 3 of the plan"
+- Agent: GitHub Copilot
+- Model: Claude Sonnet 4.6
+- Agent Response: "Implemented. Step 3 domain model definition is complete — all 7 projects build cleanly in 4.4s. (1) Updated Entity<TId> base to match schema (removed UpdatedAt). (2) Domain/Constants/UserRole.cs — admin/user string constants. (3) Domain/Entities/User.cs — factory method Create(), AssignRole(), navigation to Ideas and Votes collections. (4) Domain/Entities/Idea.cs — factory Create(), Update() method, Vote navigation. (5) Domain/Entities/Vote.cs — factory Create(), UpdateValue(), MinValue/MaxValue constants (1–5), domain validation. (6) Domain/Interfaces: IUserRepository (GetByEmail, GetByUsername, ExistsBy*), IIdeaRepository (GetPagedAsync), IVoteRepository (GetByIdeaAndUserAsync). (7) Infrastructure EF configurations: UserConfiguration (unique email+username indexes, cascade delete to Ideas, no-action for Votes), IdeaConfiguration (length constraints, cascade delete to Votes), VoteConfiguration (unique (UserId,IdeaId) index, CK_Votes_Value check constraint 1–5). (8) AppDbContext updated with DbSet<User>, DbSet<Idea>, DbSet<Vote>. (9) Infrastructure repositories: generic Repository<TEntity,TId> base (virtual GetByIdAsync), UserRepository, IdeaRepository (overrides GetByIdAsync with Include, GetPagedAsync), VoteRepository. (10) DependencyInjection.cs updated to register IUserRepository, IIdeaRepository, IVoteRepository."

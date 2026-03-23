@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using VotingOnIdeas.Domain.Entities;
 
 namespace VotingOnIdeas.Infrastructure.Persistence;
 
@@ -6,9 +7,14 @@ public sealed class AppDbContext : DbContext
 {
     public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
 
+    public DbSet<User> Users => Set<User>();
+    public DbSet<Idea> Ideas => Set<Idea>();
+    public DbSet<Vote> Votes => Set<Vote>();
+
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.ApplyConfigurationsFromAssembly(typeof(AppDbContext).Assembly);
         base.OnModelCreating(modelBuilder);
     }
 }
+
