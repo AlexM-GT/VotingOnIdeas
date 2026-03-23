@@ -14,7 +14,7 @@ public sealed class IdeaRepository : Repository<Idea, Guid>, IIdeaRepository
         int pageSize,
         CancellationToken cancellationToken = default)
     {
-        var query = DbSet.Include(i => i.Votes).OrderByDescending(i => i.CreatedAt);
+        var query = DbSet.Include(i => i.Votes).Include(i => i.User).OrderByDescending(i => i.CreatedAt);
 
         var totalCount = await query.CountAsync(cancellationToken);
         var items = await query
