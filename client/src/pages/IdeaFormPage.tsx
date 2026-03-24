@@ -35,7 +35,7 @@ export function IdeaFormPage({ mode }: IdeaFormPageProps) {
     try {
       if (mode === 'create') {
         const idea = await api.createIdea(title, description);
-        navigate(`/ideas/${idea.id}`);
+        navigate(`/ideas/${idea.id}`, { replace: true });
       } else if (id) {
         const idea = await api.updateIdea(id, title, description);
         navigate(`/ideas/${idea.id}`);
