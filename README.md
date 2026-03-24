@@ -28,7 +28,7 @@ Github Copilot in VS Code
 
 ## Key prompts
 
-See in [text](docs/prompts_history.md)
+See in [prompts_history.md](docs/prompts_history.md)
 
 ## Observations and learnings
 
