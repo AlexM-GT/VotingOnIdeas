@@ -199,3 +199,9 @@ EntityFramework is used to access data in the database.
 - Agent: GitHub Copilot
 - Model: GPT-5.3-Codex
 - Agent Response: "Implemented Step 11 containerized local environment. Added `server/Dockerfile` (.NET 10 API, port 8080) and `server/.dockerignore`; added `client/Dockerfile` (Vite build + Nginx runtime), `client/nginx.conf` (SPA fallback), and `client/.dockerignore`; created root `docker-compose.yml` with `sqlserver`, `backend`, and `frontend` services, startup ordering (`backend` waits for healthy SQL), persistent SQL volume, CORS/API/JWT environment wiring, and configurable host ports (`FRONTEND_HOST_PORT`, `BACKEND_HOST_PORT`, `SQL_HOST_PORT`). Updated `README.md` with Docker architecture, env variables, startup commands, port overrides, verification URLs, and troubleshooting. Validation: `docker compose config` passes, stack builds successfully, containers run healthy, and endpoints return HTTP 200 (frontend and Scalar API) using port overrides on this machine."
+
+### Entry 22
+- User Prompt: "Execute Step 12 of the plan"
+- Agent: GitHub Copilot
+- Model: GPT-5.3-Codex
+- Agent Response: "Implemented Step 12 delivery documentation in `README.md`. Added complete, practical runbook sections for prerequisites, repository structure, local environment setup, local run commands, EF migration commands, backend/frontend test commands, API endpoint overview (auth + ideas), Docker startup and troubleshooting, and verification checklists. Added shell-specific Docker port override examples for Bash, PowerShell, and Windows cmd to avoid command syntax issues and keep CORS/port wiring clear."
