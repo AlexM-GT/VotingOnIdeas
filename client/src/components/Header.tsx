@@ -115,6 +115,7 @@ export function Header() {
           <div className="relative" ref={ref}>
             <button
               onClick={() => setOpen((v) => !v)}
+              aria-label="Account menu"
               className="flex items-center gap-1 rounded-full border border-[#D9D9D9] bg-[#F5F5F5] px-3 py-2 text-sm text-[#1E1E1E] hover:bg-[#EBEBEB] transition-colors"
             >
               {!user && <span>Account</span>}

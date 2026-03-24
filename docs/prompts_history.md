@@ -187,3 +187,15 @@ EntityFramework is used to access data in the database.
 - Agent: GitHub Copilot
 - Model: Claude Haiku 4.5
 - Agent Response: "Implemented three fixes: (1) Frontend logout — updated Header.tsx handleLogout() with proper error handling and ensured navigation happens in finally block. (2) Fixed api.ts logout() function to send refreshToken in request body to match backend endpoint expectations (backend AuthController.Logout expects RefreshTokenRequest with refreshToken). (3) Admin delete permissions — updated IdeaCard.tsx and IdeaDetailPage.tsx to check both isOwner and isAdmin roles: added canDelete = isOwner || isAdmin in IdeaCard, and canManage = isOwner || isAdmin in IdeaDetailPage (edit button remains owner-only, delete available to both). Backend DeleteIdeaUseCase already enforces admin bypass via 'command.RequestedByRole != UserRole.Admin' check. Build: ✓ 55 modules, 0 errors, 256 KB JS, 79.60 KB gzipped."
+
+### Entry 20
+- User Prompt: "Execute Step 10 of the plan"
+- Agent: GitHub Copilot
+- Model: GPT-5.3-Codex
+- Agent Response: "Implemented Step 10 frontend quality layer. Added Vitest + Testing Library setup (`vitest.config.ts`, `src/test/setup.ts`), scripts (`test`, `test:unit`), and unit tests for hook and route guard behavior (`src/hooks/useAuth.test.tsx`, `src/components/ProtectedRoute.test.tsx`). Added Playwright critical journey test (`e2e/user-journey.spec.ts`) covering register, login state verification, list ideas, create idea, edit owned idea, rate idea, delete owned idea, and logout. Configured selectors for stable automation by adding an aria-label to the account menu button in `src/components/Header.tsx`. Installed Playwright browsers and validated: unit tests pass (5/5), Playwright e2e passes on both desktop and mobile projects (2/2)."
+
+### Entry 21
+- User Prompt: "Execute Step 11 of the plan"
+- Agent: GitHub Copilot
+- Model: GPT-5.3-Codex
+- Agent Response: "Implemented Step 11 containerized local environment. Added `server/Dockerfile` (.NET 10 API, port 8080) and `server/.dockerignore`; added `client/Dockerfile` (Vite build + Nginx runtime), `client/nginx.conf` (SPA fallback), and `client/.dockerignore`; created root `docker-compose.yml` with `sqlserver`, `backend`, and `frontend` services, startup ordering (`backend` waits for healthy SQL), persistent SQL volume, CORS/API/JWT environment wiring, and configurable host ports (`FRONTEND_HOST_PORT`, `BACKEND_HOST_PORT`, `SQL_HOST_PORT`). Updated `README.md` with Docker architecture, env variables, startup commands, port overrides, verification URLs, and troubleshooting. Validation: `docker compose config` passes, stack builds successfully, containers run healthy, and endpoints return HTTP 200 (frontend and Scalar API) using port overrides on this machine."
