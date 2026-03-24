@@ -84,22 +84,9 @@ export function IdeaCard({ idea, userRating, onRate, onDelete }: IdeaCardProps) 
   return (
     /*
      * Card: Figma 1-469 inner card
-     * Direction=Horizontal → flex flex-row
      * bg-white, 1px solid #D9D9D9, border-radius 8px
      */
-    <article className="flex flex-row overflow-hidden rounded-lg border border-[#D9D9D9] bg-white">
-      {/* Left – image placeholder (backend has no image field) */}
-      <div className="flex w-40 shrink-0 items-center justify-center bg-[#F5F5F5] text-[#BDBDBD]">
-        <svg width="40" height="40" viewBox="0 0 24 24" fill="none"
-          stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-          <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
-          <circle cx="8.5" cy="8.5" r="1.5" />
-          <polyline points="21 15 16 10 5 21" />
-        </svg>
-      </div>
-
-      {/* Right – body */}
-      <div className="flex flex-1 flex-col gap-3 p-5">
+    <article className="flex flex-col overflow-hidden rounded-lg border border-[#D9D9D9] bg-white p-5">
         {/* Text */}
         <div>
           <h3 className="text-base font-semibold text-[#1E1E1E] leading-snug">{idea.title}</h3>
@@ -136,7 +123,6 @@ export function IdeaCard({ idea, userRating, onRate, onDelete }: IdeaCardProps) 
             )}
           </div>
         </div>
-      </div>
     </article>
   );
 }

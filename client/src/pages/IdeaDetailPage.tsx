@@ -96,18 +96,8 @@ export function IdeaDetailPage() {
         ← Back
       </button>
 
-      <div className="rounded-lg border border-[#D9D9D9] bg-white overflow-hidden">
-        {/* Image placeholder */}
-        <div className="flex h-48 w-full items-center justify-center bg-[#F5F5F5] text-[#BDBDBD]">
-          <svg width="48" height="48" viewBox="0 0 24 24" fill="none"
-            stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-            <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
-            <circle cx="8.5" cy="8.5" r="1.5" />
-            <polyline points="21 15 16 10 5 21" />
-          </svg>
-        </div>
-
-        <div className="p-6 flex flex-col gap-4">
+      <div className="rounded-lg border border-[#D9D9D9] bg-white p-6">
+        <div className="flex flex-col gap-4">
           {/* Title + owner actions */}
           <div className="flex items-start justify-between gap-4">
             <h1 className="text-2xl font-semibold text-[#1E1E1E]">{idea.title}</h1>
