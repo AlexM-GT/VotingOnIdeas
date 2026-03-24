@@ -90,7 +90,7 @@ export function IdeaDetailPage() {
     <div className="mx-auto max-w-5xl px-6 py-8">
       {/* Back */}
       <button
-        onClick={() => navigate(-1)}
+        onClick={() => navigate('/')}
         className="mb-6 flex items-center gap-1 text-sm text-[#888] hover:text-[#1E1E1E] transition-colors"
       >
         ← Back
@@ -150,7 +150,7 @@ export function IdeaDetailPage() {
               />
               <span className="text-sm text-[#999]">
                 {idea.voteCount} {idea.voteCount === 1 ? 'vote' : 'votes'}
-                {idea.averageRating !== null && ` · avg ${idea.averageRating.toFixed(1)}`}
+                {idea.averageRating !== null && ` · Average: ${idea.averageRating.toFixed(1)}`}
               </span>
             </div>
           </div>

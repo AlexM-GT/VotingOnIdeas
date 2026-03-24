@@ -119,6 +119,7 @@ export function IdeaCard({ idea, userRating, onRate, onDelete }: IdeaCardProps) 
           {/* Vote count */}
           <span className="text-xs text-[#999]">
             {idea.voteCount} {idea.voteCount === 1 ? 'vote' : 'votes'}
+            {idea.averageRating !== null && ` · Average: ${idea.averageRating.toFixed(1)}`}
           </span>
 
           <div className="ml-auto flex items-center gap-2">
